@@ -7,7 +7,9 @@
     "release:major": "env SEMANTIC=major npm run release",
     "release:minor": "env SEMANTIC=minor npm run release",
     "release:patch": "env SEMANTIC=patch npm run release",
-    "release": "npm version ${SEMANTIC:-patch} -m \"Release %s\" && git push --tags && npm publish"
+    "release": "npm version ${SEMANTIC:-patch} -m \"Release %s\" && git push --tags && npm publish",
+    "fix": "eslint . --fix",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -25,5 +27,10 @@
   "homepage": "https://github.com/kvz/fakefile#readme",
   "dependencies": {
     "fs-extra": "0.26.5"
+  },
+  "devDependencies": {
+    "eslint": "1.10.3",
+    "eslint-config-standard": "4.4.0",
+    "eslint-plugin-standard": "1.3.2"
   }
 }

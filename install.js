@@ -23,7 +23,8 @@ var srcMakePath = path.normalize(__dirname + '/Makefile')
 var srcMakeBody = fs.readFileSync(srcMakePath)
 var srcMakeSha = crypto.createHash('sha1').update(srcMakeBody).digest('hex')
 var knownShas = [
-  ''
+  'b9c952534064fe425bb109814530c8e60038523b',
+  '6f7a23c0a22515359983075ea3dfd2c0215bea41'
 ]
 
 try {
@@ -35,7 +36,7 @@ try {
 
 try {
   dstPackage = require(dstPackagePath)
-}catch (e) {
+} catch (e) {
   dstPackage = false
 }
 
@@ -55,6 +56,6 @@ if (!dstMakeBody || knownShas.indexOf(dstMakeSha) > -1) {
   process.exit(0)
 }
 
-console.error('I found a Makefile at ' +  dstMakePath +' that I do not know. (sha1: ' + dstMakeSha + ')')
+console.error('I found a Makefile at ' + dstMakePath + ' that I do not know. (sha1: ' + dstMakeSha + ')')
 console.error('I will not risk overwritting it. ')
 console.error('Remove it first manually and install Fakefile again. ')

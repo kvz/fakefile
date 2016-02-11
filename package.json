@@ -1,0 +1,29 @@
+{
+  "name": "fakefile",
+  "version": "0.0.3",
+  "description": "Install a Makefile into your node projects that acts as an npm run-script wrapper",
+  "scripts": {
+    "install": "node install.js",
+    "release:major": "env SEMANTIC=major npm run release",
+    "release:minor": "env SEMANTIC=minor npm run release",
+    "release:patch": "env SEMANTIC=patch npm run release",
+    "release": "npm version ${SEMANTIC:-patch} -m \"Release %s\" && git push --tags && npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kvz/fakefile.git"
+  },
+  "keywords": [
+    "Makefile",
+    "npmscripts"
+  ],
+  "author": "Kevin van Zonneveld",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kvz/fakefile/issues"
+  },
+  "homepage": "https://github.com/kvz/fakefile#readme",
+  "dependencies": {
+    "fs-extra": "0.26.5"
+  }
+}

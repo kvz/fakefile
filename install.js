@@ -40,7 +40,7 @@ try {
   dstPackage = false
 }
 
-if (!dstPackage.dependencies) {
+if (!dstPackage.name) {
   console.error('No valid package.json found at ' + dstPackagePath + '. Skipping. ')
   process.exit(0)
 }

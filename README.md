@@ -34,7 +34,7 @@ So how does the Fakefile look? This is the gist of it:
 
 ```bash
 # Copyright (2016) by Kevin van Zonneveld https://twitter.com/kvz
-# Licensed under MIT. See https://www.npmjs.com/package/fakefile
+# Licensed under MIT
 define npm_script_targets
 TARGETS := $(shell node -e 'for (var k in require("./package.json").scripts) {console.log(k.replace(/:/g, "-"));}')
 $$(TARGETS):

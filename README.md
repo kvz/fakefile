@@ -18,7 +18,7 @@ Makefiles can't handle `:` characters well so it will offer `npm run build:produ
 
 ## Install
 
-You could save Fakefile's [`Makefile`](Makefile) into your project root, and that's that.
+You could save Fakefile's [`Makefile`](https://raw.githubusercontent.com/kvz/fakefile/master/Makefile) into your project root, and that's that.
 
 Alternatively, you can use the npm installer:
 

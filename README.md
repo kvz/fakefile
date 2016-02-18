@@ -44,5 +44,5 @@ If the installer detects a Makefile it does not recognize by its sha1 hash, it w
 
 ## License
 
-Copyright (c) 2013 Kevin van Zonneveld, [http://kvz.io](http://kvz.io)  
+Copyright (c) 2016 Kevin van Zonneveld, [http://kvz.io](http://kvz.io)  
 Licensed under MIT: [http://kvz.io/licenses/LICENSE-MIT](http://kvz.io/licenses/LICENSE-MIT)

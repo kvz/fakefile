@@ -1,6 +1,6 @@
 {
   "name": "fakefile",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Install a Makefile into your node projects that acts as an npm run-script wrapper",
   "scripts": {
     "install": "node install.js",

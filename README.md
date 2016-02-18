@@ -10,13 +10,17 @@ I wrote a [blog post](http://kvz.io/blog/2016/02/18/a-universal-makefile-for-jav
 
 ## Use 
 
-After installing you can type `mak<TAB><TAB>` for [autocompletion](http://davidalger.com/development/bash-completion-on-os-x-with-brew/), and Fakefile quickly enumerates any npm scripts in your `package.json` and presents these. It does this `make` at runtime, so it won't need any maintenance as your project changes its npm scripts.
+After installing you can type `mak<TAB><TAB>` for [autocompletion](http://davidalger.com/development/bash-completion-on-os-x-with-brew/), and Fakefile quickly enumerates any npm scripts in your `package.json` and presents these. It does this at runtime, so it won't need any maintenance as your project changes its npm scripts.
 
 Run `make test` and the command is passed onto `npm run test` that should do the lower-level plumbing.
 
 Makefiles can't handle `:` characters well so it will offer `npm run build:production` to you as `make build-production`.
 
 ## Install
+
+You could save Fakefile's [`Makefile`](Makefile) into your project root, and that's that.
+
+Alternatively, you can use the npm installer:
 
 ```bash
 npm install --save-exact fakefile

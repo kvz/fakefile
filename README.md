@@ -2,17 +2,19 @@
 
 A Universal Makefile for JavaScript that proxies to your npm scripts. 
 
+## How
+
+After installing, you can type `mak<TAB><TAB>` for [autocompletion](http://davidalger.com/development/bash-completion-on-os-x-with-brew/). Fakefile then quickly enumerates any npm scripts in your `package.json` and presents these. It does this at runtime, so it won't need any maintenance as your project changes its npm scripts.
+
 ## Why 
 
-This gets us the best of both worlds. Codify your tasks in a system (npm scripts) that won't be obsolete within the year, that's straightforward to people on Windows (they can ignore the Makefile and use `npm run`), and unix folks alike. In any repo I maintain, no matter the language, `make <something>` gets me what I want without thinking twice.
+This gets us the best of both worlds. Codify your tasks in a system (npm scripts) that won't be obsolete within the year, that's straightforward to people on Windows (they can ignore the Makefile and use `npm run`), and unix folks alike. Profit from instant autocomplete. In any repo I maintain, no matter the language, `make <something>` gets me what I want without thinking twice.
 
 I wrote a [blog post](http://kvz.io/blog/2016/02/18/a-universal-makefile-for-javascript/) that goes into more detail why this makes for a great JavaScript task running environment.
 
 ## Use 
 
-After installing you can type `mak<TAB><TAB>` for [autocompletion](http://davidalger.com/development/bash-completion-on-os-x-with-brew/), and Fakefile quickly enumerates any npm scripts in your `package.json` and presents these. It does this at runtime, so it won't need any maintenance as your project changes its npm scripts.
-
-Run `make test` and the command is passed onto `npm run test` that should do the lower-level plumbing.
+Run e.g. `make test` and the command is passed onto `npm run test` that should do the lower-level plumbing.
 
 Makefiles can't handle `:` characters well so it will offer `npm run build:production` to you as `make build-production`.
 

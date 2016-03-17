@@ -52,7 +52,12 @@ if (!dstMakeBody || knownShas.indexOf(dstMakeSha) > -1) {
   }
 
   console.error('No or known Makefile found at ' + srcMakePath + ' installing ours to ' + dstMakePath + ' ')
-  fs.copySync(srcMakePath, dstMakePath, {clobber: true})
+  try {
+    fs.copySync(srcMakePath, dstMakePath, {clobber: true})
+  } catch (e) {
+    console.error('I was unable to install, but won\'t error out hard as this is not worth blocking e.g. deploys for. ')
+    console.error(e.message)
+  }
   process.exit(0)
 }
 

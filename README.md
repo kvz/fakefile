@@ -25,7 +25,7 @@ You could save Fakefile's [`Makefile`](https://raw.githubusercontent.com/kvz/fak
 Alternatively, you can use the npm installer:
 
 ```bash
-npm install --save-exact fakefile
+npm install fakefile --save-dev --save-exact 
 ```
 
 This will save a Makefile into your project root. 

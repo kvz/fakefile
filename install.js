@@ -62,5 +62,5 @@ if (!dstMakeBody || knownShas.indexOf(dstMakeSha) > -1) {
 }
 
 console.error('I found a Makefile at ' + dstMakePath + ' that I do not know. (sha1: ' + dstMakeSha + ')')
-console.error('I will not risk overwritting it. ')
+console.error('I will not risk overwriting it. ')
 console.error('Remove it first manually and install Fakefile again. ')

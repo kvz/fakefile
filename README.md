@@ -4,13 +4,13 @@ A Universal Makefile for JavaScript that proxies to your npm scripts.
 
 ## How
 
-After installing, you can type `mak<TAB><TAB>` for [autocompletion](http://davidalger.com/development/bash-completion-on-os-x-with-brew/). Fakefile then quickly enumerates any npm scripts in your `package.json` and presents these. It does this at runtime, so it won't need any maintenance as your project changes its npm scripts.
+After installing, you can type `mak<TAB><TAB>` for [autocompletion](https://davidalger.com/development/bash-completion-on-os-x-with-brew/). Fakefile then quickly enumerates any npm scripts in your `package.json` and presents these. It does this at runtime, so it won't need any maintenance as your project changes its npm scripts.
 
 ## Why 
 
 This gets us the best of both worlds. Codify your tasks in a system (npm scripts) that won't be obsolete within the year, that's straightforward to people on Windows (they can ignore the Makefile and use `npm run`), and unix folks alike. Profit from instant autocomplete. In any repo I maintain, no matter the language, `make <something>` gets me what I want without thinking twice.
 
-I wrote a [blog post](http://kvz.io/blog/2016/02/18/a-universal-makefile-for-javascript/) that goes into more detail why this makes for a great JavaScript task running environment.
+I wrote a [blog post](https://kvz.io/blog/2016/02/18/a-universal-makefile-for-javascript/) that goes into more detail why this makes for a great JavaScript task running environment.
 
 ## Use 
 
@@ -34,15 +34,9 @@ If the installer detects a Makefile it does not recognize by its sha1 hash, it w
 
 ## Authors
 
-- Kevin van Zonneveld (<http://kvz.io>)
-
-## Sponsoring
-
-<!-- badges/ -->
-[![Flattr donate button](http://img.shields.io/flattr/donate.png?color=green)](https://flattr.com/submit/auto?user_id=kvz&url=https://github.com/kvz/bash3boilerplate&title=bash3boilerplate&language=&tags=github&category=software "Sponsor the development of bash3boilerplate via Flattr")
-<!-- /badges -->
+- Kevin van Zonneveld (<https://kvz.io>)
 
 ## License
 
-Copyright (c) 2016 Kevin van Zonneveld, [http://kvz.io](http://kvz.io)  
-Licensed under MIT: [http://kvz.io/licenses/LICENSE-MIT](http://kvz.io/licenses/LICENSE-MIT)
+Copyright (c) 2016 Kevin van Zonneveld, [https://kvz.io](https://kvz.io)  
+Licensed under MIT: [https://kvz.io/licenses/LICENSE-MIT](https://kvz.io/licenses/LICENSE-MIT)

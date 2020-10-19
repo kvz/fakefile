@@ -40,26 +40,26 @@ try {
 }
 
 if (!dstPackage.name) {
-  console.error('No valid package.json found at ' + dstPackagePath + '. Skipping. ')
+  console.error(`No valid package.json found at ${dstPackagePath}. Skipping. `)
   process.exit(0)
 }
 
 if (!dstMakeBody || knownShas.indexOf(dstMakeSha) > -1) {
   if (srcMakeSha === dstMakeSha) {
-    console.error('Already on the right Fakefile. Skipping. ')
+    console.error(`Already on the right Fakefile. Skipping. `)
     process.exit(0)
   }
 
-  console.error('No or known Makefile found at ' + srcMakePath + ' installing ours to ' + dstMakePath + ' ')
+  console.error(`No or known Makefile found at ${srcMakePath} installing ours to ${dstMakePath}. `)
   try {
     fs.copySync(srcMakePath, dstMakePath, { clobber: true })
   } catch (e) {
-    console.error('I was unable to install, but won\'t error out hard as this is not worth blocking e.g. deploys for. ')
+    console.error(`I was unable to install, but won't error out hard as this is not worth blocking e.g. deploys for. `)
     console.error(e.message)
   }
   process.exit(0)
 }
 
-console.error('I found a Makefile at ' + dstMakePath + ' that I do not know. (sha1: ' + dstMakeSha + ')')
-console.error('I will not risk overwriting it. ')
-console.error('Remove it first manually and install Fakefile again. ')
+console.error(`I found a Makefile at ${dstMakePath} that I do not know. (sha1: ${dstMakeSha})`)
+console.error(`I will not risk overwriting it. `)
+console.error(`Remove it first manually and install Fakefile again. `)

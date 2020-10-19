@@ -32,9 +32,10 @@ This will save a Makefile into your project root.
 
 If the installer detects a Makefile it does not recognize by its sha1 hash, it will warn you instead of overwriting it. This gives you a chance to port any existing Makefile logic to npm scripts, after which you can safely remove your original Makefile and rerun the installation, this time successfully installing Fakefile. The installer is happy to overwrite known sha1s, so that we can upgrade should the need arise.
 
-## Authors
+## Contributors
 
 - Kevin van Zonneveld (<https://kvz.io>)
+- [@Jarvie8176](https://github.com/Jarvie8176)
 
 ## License
 

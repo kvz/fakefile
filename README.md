@@ -4,7 +4,7 @@ A Universal Makefile for JavaScript that proxies to your npm scripts.
 
 ## How
 
-After installing, you can type `mak<TAB><TAB>` for [autocompletion](https://davidalger.com/development/bash-completion-on-os-x-with-brew/). Fakefile then quickly enumerates any npm scripts in your `package.json` and presents these. It does this at runtime, so it won't need any maintenance as your project changes its npm scripts.
+After installing, you can type `mak<TAB><TAB>` for [autocompletion](https://davidalger.com/posts/bash-completion-on-os-x-with-brew/). Fakefile then quickly enumerates any npm scripts in your `package.json` and presents these. It does this at runtime, so it won't need any maintenance as your project changes its npm scripts.
 
 ## Why 
 

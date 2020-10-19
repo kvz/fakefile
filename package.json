@@ -12,9 +12,7 @@
     "release:minor": "env SEMANTIC=minor npm run release",
     "release:patch": "env SEMANTIC=patch npm run release",
     "release": "npm version ${SEMANTIC:-patch} -m \"Release %s\" && git push --tags && git push && npm publish",
-    "test:foo-bar": "echo baz:-",
-    "test:foo:bar": "echo baz::",
-    "test-foo-bar": "echo baz--",
+    "test:foo-bar": "echo baz",
     "fix": "eslint . --fix",
     "lint": "eslint ."
   },

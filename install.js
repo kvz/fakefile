@@ -23,6 +23,7 @@ var srcMakePath = path.normalize(__dirname + '/Makefile')
 var srcMakeBody = fs.readFileSync(srcMakePath)
 var srcMakeSha = crypto.createHash('sha1').update(srcMakeBody).digest('hex')
 var knownShas = [
+  'b021c02ab132b6c114f0a50a51d25951f3e4289a',
   'b9c952534064fe425bb109814530c8e60038523b',
   '6f7a23c0a22515359983075ea3dfd2c0215bea41'
 ]

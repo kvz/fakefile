@@ -13,19 +13,18 @@
 var fs = require('fs-extra')
 var path = require('path')
 var crypto = require('crypto')
-var rootDir = path.normalize(__dirname + '/../..')
+var rootDir = process.env.FAKEFILE_PROJECT || path.normalize(path.join(__dirname, '..', '..'))
 var dstPackagePath = rootDir + '/package.json'
 var dstPackage = {}
 var dstMakePath = rootDir + '/Makefile'
 var dstMakeBody = ''
 var dstMakeSha = ''
-var srcMakePath = path.normalize(__dirname + '/Makefile')
+var srcMakePath = path.normalize(path.join(__dirname, 'Makefile'))
 var srcMakeBody = fs.readFileSync(srcMakePath)
 var srcMakeSha = crypto.createHash('sha1').update(srcMakeBody).digest('hex')
 var knownShas = [
-  'b021c02ab132b6c114f0a50a51d25951f3e4289a',
   'b9c952534064fe425bb109814530c8e60038523b',
-  '6f7a23c0a22515359983075ea3dfd2c0215bea41'
+  '6f7a23c0a22515359983075ea3dfd2c0215bea41',
 ]
 
 try {
@@ -54,7 +53,7 @@ if (!dstMakeBody || knownShas.indexOf(dstMakeSha) > -1) {
 
   console.error('No or known Makefile found at ' + srcMakePath + ' installing ours to ' + dstMakePath + ' ')
   try {
-    fs.copySync(srcMakePath, dstMakePath, {clobber: true})
+    fs.copySync(srcMakePath, dstMakePath, { clobber: true })
   } catch (e) {
     console.error('I was unable to install, but won\'t error out hard as this is not worth blocking e.g. deploys for. ')
     console.error(e.message)

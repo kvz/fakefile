@@ -1,5 +1,3 @@
-'use strict'
-
 /*
  * This installs a Makefile into any project that has fakefile as a dependency.
  * We'll overwrite known Fakefiles, but no unknown Makefiles via sha1 matchting.
@@ -10,19 +8,20 @@
  * The meat of this project can be found in ./Makefile
  */
 
-var fs = require('fs-extra')
-var path = require('path')
-var crypto = require('crypto')
-var rootDir = process.env.FAKEFILE_PROJECT || path.normalize(path.join(__dirname, '..', '..'))
-var dstPackagePath = rootDir + '/package.json'
-var dstPackage = {}
-var dstMakePath = rootDir + '/Makefile'
-var dstMakeBody = ''
-var dstMakeSha = ''
-var srcMakePath = path.normalize(path.join(__dirname, 'Makefile'))
-var srcMakeBody = fs.readFileSync(srcMakePath)
-var srcMakeSha = crypto.createHash('sha1').update(srcMakeBody).digest('hex')
-var knownShas = [
+const fs     = require('fs-extra')
+const path   = require('path')
+const crypto = require('crypto')
+
+const rootDir        = process.env.FAKEFILE_PROJECT || path.normalize(path.join(__dirname, '..', '..'))
+const dstPackagePath = rootDir + '/package.json'
+const dstMakePath    = rootDir + '/Makefile'
+let   dstPackage     = {}
+let   dstMakeBody    = ''
+let   dstMakeSha     = ''
+const srcMakePath    = path.normalize(path.join(__dirname, 'Makefile'))
+const srcMakeBody    = fs.readFileSync(srcMakePath)
+const srcMakeSha     = crypto.createHash('sha1').update(srcMakeBody).digest('hex')
+const knownShas      = [
   'b9c952534064fe425bb109814530c8e60038523b',
   '6f7a23c0a22515359983075ea3dfd2c0215bea41',
 ]

@@ -34,7 +34,12 @@ TARGETS := $(shell \
 		| grep -v -E "^install$$"
 )
 $$(TARGETS):
-	npm run $(subst -,:,$(MAKECMDGOALS))
+	npm run $(shell \
+            	node -e 'for (var k in require("./package.json").scripts) {console.log(k.replace(/:/g, "-"), k);}'
+            		| grep -E "^$(MAKECMDGOALS)\s"
+            		| head -n1
+            		| awk '{print $$2}'
+            	)
 
 .PHONY: $$(TARGETS)
 endef

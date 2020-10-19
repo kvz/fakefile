@@ -29,7 +29,10 @@
 #   (http://davidalger.com/development/bash-completion-on-os-x-with-brew/)
 
 define npm_script_targets
-TARGETS := $(shell node -e 'for (var k in require("./package.json").scripts) {console.log(k.replace(/:/g, "-"));}')
+TARGETS := $(shell \
+	node -e 'for (var k in require("./package.json").scripts) {console.log(k.replace(/:/g, "-"));}'
+		| grep -v -E "^install$$"
+)
 $$(TARGETS):
 	npm run $(subst -,:,$(MAKECMDGOALS))
 

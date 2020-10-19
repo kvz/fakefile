@@ -28,13 +28,21 @@
 #   OSX users will have to install bash-completion
 #   (http://davidalger.com/development/bash-completion-on-os-x-with-brew/)
 
+ifeq ($(shell test -e ./yarn.lock && echo -n yes),yes)
+	RUNNER=yarn
+	INSTALLER=yarn install
+else
+	RUNNER=npm run
+	INSTALLER=npm install
+endif
+
 define npm_script_targets
 TARGETS := $(shell \
 	node -e 'for (var k in require("./package.json").scripts) {console.log(k.replace(/:/g, "-"));}'
 		| grep -v -E "^install$$"
 )
 $$(TARGETS):
-	npm run $(shell \
+	$(RUNNER) $(shell \
 							node -e 'for (var k in require("./package.json").scripts) {console.log(k.replace(/:/g, "-"), k);}'
 								| grep -E "^$(MAKECMDGOALS)\s"
 								| head -n1
@@ -48,4 +56,4 @@ $(eval $(call npm_script_targets))
 
 # These npm run scripts are available, without needing to be mentioned in `package.json`
 install:
-	npm install
+	$(INSTALLER)

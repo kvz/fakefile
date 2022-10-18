@@ -22,10 +22,11 @@ const srcMakePath    = path.normalize(path.join(__dirname, 'Makefile'))
 const srcMakeBody    = fs.readFileSync(srcMakePath)
 const srcMakeSha     = crypto.createHash('sha1').update(srcMakeBody).digest('hex')
 const knownShas      = [
-  '4df6728ade4e0c1334510a9d58a449babb335576',
   '037243c18fc7ae44f1952b69a04ae96b975b7ad8',
-  'b9c952534064fe425bb109814530c8e60038523b',
+  '4df6728ade4e0c1334510a9d58a449babb335576',
   '6f7a23c0a22515359983075ea3dfd2c0215bea41',
+  '9e015a6a36ea5efd561694e4581e2177cc82f815',
+  'b9c952534064fe425bb109814530c8e60038523b',
 ]
 
 try {
